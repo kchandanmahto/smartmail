@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMail AI | Email Assistant</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="brand-icon">✉</span>
+                <span>SmartMail <b>AI</b></span>
+            </div>
+
+            <button class="new-btn" id="newEmail">
+                + New Email
+            </button>
+
+            <div class="sidebar-heading">WORKSPACE</div>
+
+            <button class="nav-item active" id="homeNav">
+                <span>✦</span> Email Assistant
+            </button>
+
+            <button class="nav-item" id="historyNav">
+                <span>◷</span> History
+            </button>
+
+            <div class="sidebar-footer">
+                <div class="status-dot"></div>
+                AI Engine Ready
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h2>AI Email Assistant</h2>
+                    <p>Understand emails. Generate better replies.</p>
+                </div>
+
+                <span class="version">AI POWERED</span>
+            </header>
+
+            <section id="workspace">
+
+                <div class="welcome">
+                    <span class="eyebrow">SMART EMAIL WORKSPACE</span>
+                    <h1>Write smarter.<br>
+                        <span>Reply faster.</span>
+                    </h1>
+                    <p>
+                        Paste your email and let AI analyze it
+                        and generate the perfect response.
+                    </p>
+                </div>
+
+                <div class="editor-card">
+
+                    <label for="emailInput">Original Email</label>
+
+                    <textarea id="emailInput" placeholder="Paste your email content here..."></textarea>
+
+                    <div class="controls">
+
+                        <div class="field">
+                            <label for="tone">Reply Tone</label>
+
+                            <select id="tone">
+                                <option value="professional">Professional</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="formal">Formal</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="length">Reply Length</label>
+
+                            <select id="length">
+                                <option value="short">Short</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="detailed">Detailed</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button class="generate-btn" id="generateBtn">
+                        <span>✦</span> Generate AI Reply
+                    </button>
+
+                    <p class="privacy-note">
+                        Your email is processed by AI and saved
+                        in your local application database.
+                    </p>
+
+                </div>
+
+                <section id="resultSection" hidden>
+
+                    <div class="result-card">
+
+                        <div class="section-title">
+                            <h3>Email Analysis</h3>
+                            <span class="result-tag">AI ANALYSIS</span>
+                        </div>
+
+                        <p id="summary"></p>
+
+                        <div class="analysis-grid">
+                            <div class="analysis-item">
+                                <span>Intent</span>
+                                <strong id="intent"></strong>
+                            </div>
+
+                            <div class="analysis-item">
+                                <span>Category</span>
+                                <strong id="category"></strong>
+                            </div>
+
+                            <div class="analysis-item">
+                                <span>Sentiment</span>
+                                <strong id="sentiment"></strong>
+                            </div>
+
+                            <div class="analysis-item">
+                                <span>Priority</span>
+                                <strong id="priority"></strong>
+                            </div>
+                        </div>
+
+                        <h4>Key Points</h4>
+                        <ul id="keyPoints"></ul>
+
+                        <div class="section-title reply-heading">
+                            <h3>Generated Reply</h3>
+                            <button id="copyBtn" class="copy-btn">
+                                Copy Reply
+                            </button>
+                        </div>
+
+                        <textarea id="replyOutput" rows="9"></textarea>
+
+                        <p class="draft-note">
+                            AI-generated draft. Review before sending.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+            <section id="historySection" hidden>
+                <div class="history-header">
+                    <h2>Email History</h2>
+                    <button id="refreshHistory">Refresh</button>
+                </div>
+
+                <div id="historyList"></div>
+            </section>
+
+            <div id="message" role="status"></div>
+
+        </main>
+
+    </div>
+
+    <script src="/static/js/app.js"></script>
+
+</body>
+
+</html>
